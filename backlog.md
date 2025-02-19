@@ -110,6 +110,8 @@ running make in vscode
 
 watch mode
 
+code coverage
+
 ## python maintenance
 
 python version -> file
