@@ -1,5 +1,5 @@
 commit: test
-	git commit -a
+	git commit -a -m "passed test"
 
 test:
 	pytest
