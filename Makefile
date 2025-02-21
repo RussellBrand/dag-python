@@ -3,3 +3,7 @@ commit: test
 
 test:
 	pytest -q
+
+push:
+	git push
+
