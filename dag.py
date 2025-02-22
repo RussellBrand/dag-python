@@ -18,8 +18,8 @@ def ignore(*_junk) -> None:  # type: ignore
         pass
 
 
-def is_tree(_tree: Tree) -> bool:
-    ignore(_tree)
-    if len(_tree.roots) != 1:
+def is_tree(tree: Tree) -> bool:
+
+    if len(tree.roots) != 1:
         return False
     return True
