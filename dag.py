@@ -13,6 +13,14 @@ class Tree(NamedTuple):
     connections: dict[NodeName, list[NodeName]]
 
 
+def nodes(tree: Tree) -> list[NodeName]:
+    return tree.nodenames
+
+
+def graph_copy(tree: Tree) -> Tree:
+    return Tree([], nodes(tree), {})
+
+
 def MakeTree(roots: list[NodeName], nodenames: list[NodeName], connections: dict[NodeName, list[NodeName]]) -> Tree:
     return Tree(roots, nodenames, connections)
 
