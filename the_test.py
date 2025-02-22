@@ -1,7 +1,7 @@
 # import pytest
-from dag import is_tree, Tree
+from dag import MakeTree, is_tree, Tree
 
-EMPTY_TREE = Tree([], [], [], {})
+EMPTY_TREE = MakeTree([], [], {})
 
 
 def test_empty_graph_is_not_a_tree():
@@ -9,11 +9,11 @@ def test_empty_graph_is_not_a_tree():
 
 
 def test_graph_win_exactly_one_root_is_a_tree():
-    assert (is_tree(Tree(['a'], [], ['a'], {})))
-    assert (is_tree(Tree(['a'], [], ['a', 'b', 'c'], {})))
+    assert (is_tree(MakeTree(['a'], ['a'], {})))
+    assert (is_tree(MakeTree(['a'], ['a', 'b', 'c'], {})))
     assert (
-        is_tree(Tree(['a'], [], ['a', 'b', 'c', 'd'], {'a': ['b', 'c', 'd']})))
+        is_tree(MakeTree(['a'], ['a', 'b', 'c', 'd'], {'a': ['b', 'c', 'd']})))
 
 
 def test_graph_with_multiple_roots_is_not_a_tree():
-    assert not is_tree(Tree(['a', 'b'], [], ['a', 'b'], {}))
+    assert not is_tree(MakeTree(['a', 'b'], ['a', 'b'], {}))

@@ -8,9 +8,13 @@ type NodeName = str
 
 class Tree(NamedTuple):
     roots: list[NodeName]
-    finals: list[NodeName]
+    # finals: list[NodeName]
     nodenames: list[NodeName]
     connections: dict[NodeName, list[NodeName]]
+
+
+def MakeTree(roots: list[NodeName], nodenames: list[NodeName], connections: dict[NodeName, list[NodeName]]) -> Tree:
+    return Tree(roots, nodenames, connections)
 
 
 def ignore(*_junk) -> None:  # type: ignore
