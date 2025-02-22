@@ -4,6 +4,12 @@
 
 graph-copy
 
+- same nodes
+- same edges
+- same roots
+- modify the original the copy shouldn't change
+- modify the copy the origianl shouldn't change
+
 graph-equal
 
 add-node
