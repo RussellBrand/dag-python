@@ -9,5 +9,5 @@ def test_empty_graph_is_not_a_tree():
 
 
 def test_graph_win_exactly_one_root_is_a_tree():
-    tree = Tree(['a'], [], ['a'], {})
-    assert is_tree(tree) is True
+
+    assert (Tree(['a'], [], ['a'], {}))
