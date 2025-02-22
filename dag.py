@@ -12,6 +12,11 @@ class Tree(NamedTuple):
     connections: dict[NodeName, set[NodeName]]
 
 
+class Edge(NamedTuple):
+    node: NodeName
+    child: NodeName
+
+
 def nodes(tree: Tree) -> set[NodeName]:
     return tree.nodenames
 
@@ -28,8 +33,8 @@ def graph_equal(tree1: Tree, tree2: Tree) -> bool:
     return True
 
 
-def edges(tree: Tree) -> set[tuple[NodeName, NodeName]]:
-    return set((node, child) for node in tree.connections for child in tree.connections[node])
+def edges(tree: Tree) -> set[Edge]:
+    return set(Edge(node, child) for node in tree.connections for child in tree.connections[node])
 
 
 def MakeTree(roots: list[NodeName], nodenames: list[NodeName], connections: dict[NodeName, set[NodeName]]) -> Tree:

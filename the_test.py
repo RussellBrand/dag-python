@@ -14,7 +14,7 @@ def test_graph_win_exactly_one_root_is_a_tree():
     assert (is_tree(MakeTree(['a'], ['a'], {})))
     assert (is_tree(MakeTree(['a'], ['a', 'b', 'c'], {})))
     assert (
-        is_tree(MakeTree(['a'], ['a', 'b', 'c', 'd'], {'a': ['b', 'c', 'd']})))
+        is_tree(MakeTree(['a'], ['a', 'b', 'c', 'd'], {'a': set(['b', 'c', 'd'])})))
 
 
 def test_graph_with_multiple_roots_is_not_a_tree():
@@ -30,18 +30,18 @@ def test_copy_of_empty_tree_has_same_of_nodes() -> None:
 
 
 def test_equal_graphs_have_same_nodes() -> None:
-    original = MakeTree(['a'], ['a', 'b', 'c'], {'a': ['b', 'c']})
-    different_order = MakeTree(['a'], ['b', 'a', 'c'], {'a': ['b', 'c']})
+    original = MakeTree(['a'], ['a', 'b', 'c'], {'a': set(['b', 'c'])})
+    different_order = MakeTree(['a'], ['b', 'a', 'c'], {'a': set(['b', 'c'])})
     assert (graph_equal(original, different_order))
 
 
 def test_equal_graphs_need_same_nodes() -> None:
-    original = MakeTree(['a'], ['a', 'b', 'c', 'd'], {'a': ['b', 'c']})
-    different_order = MakeTree(['a'], ['b', 'a', 'c'], {'a': ['b', 'c']})
+    original = MakeTree(['a'], ['a', 'b', 'c', 'd'], {'a': set(['b', 'c'])})
+    different_order = MakeTree(['a'], ['b', 'a', 'c'], {'a': set(['b', 'c'])})
     assert (not (graph_equal(original, different_order)))
 
 
 def test_equal_graphs_have_same_edges() -> None:
-    original = MakeTree(['a'], ['a', 'b', 'c'], {'a': ['b', 'c']})
-    different_order = MakeTree(['a'], ['a', 'b', 'c'], {'a': ['c', 'b']})
+    original = MakeTree(['a'], ['a', 'b', 'c'], {'a': set(['b', 'c'])})
+    different_order = MakeTree(['a'], ['a', 'b', 'c'], {'a': set(['c', 'b'])})
     assert (graph_equal(original, different_order))
