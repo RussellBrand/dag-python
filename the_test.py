@@ -12,3 +12,7 @@ def test_graph_win_exactly_one_root_is_a_tree():
 
     assert (is_tree(Tree(['a'], [], ['a'], {})))
     assert (is_tree(Tree(['a'], [], ['a', 'b', 'c'], {})))
+
+
+def test_graph_with_multiple_roots_is_not_a_tree():
+    assert not is_tree(Tree(['a', 'b'], [], ['a', 'b'], {}))
