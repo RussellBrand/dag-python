@@ -10,7 +10,7 @@ class Tree(NamedTuple):
     roots: list[NodeName]
     finals: list[NodeName]
     nodenames: list[NodeName]
-    edges: dict[NodeName, list[NodeName]]
+    connections: dict[NodeName, list[NodeName]]
 
 
 def ignore(*_junk) -> None:  # type: ignore
