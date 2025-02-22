@@ -2,7 +2,7 @@
 
 ## features
 
-graph-copy
+TODO: graph-copy
 
 - same nodes --- right now test is relying on ordering -- it shouldn't
 - same edges
@@ -10,7 +10,7 @@ graph-copy
 - modify the original the copy shouldn't change
 - modify the copy the origianl shouldn't change
 
-graph-equal
+TODO: graph-equal
 
 add-node
 

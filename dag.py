@@ -30,6 +30,7 @@ def graph_equal(tree1: Tree, tree2: Tree) -> bool:
         return False
     if edges(tree1) != edges(tree2):
         return False
+    # TODO: need to test if roots are the same
     return True
 
 
