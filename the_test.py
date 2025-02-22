@@ -32,4 +32,10 @@ def test_copy_of_empty_tree_has_same_of_nodes() -> None:
 def test_equal_graphs_have_same_nodes() -> None:
     original = MakeTree(['a'], ['a', 'b', 'c'], {'a': ['b', 'c']})
     different_order = MakeTree(['a'], ['b', 'a', 'c'], {'a': ['b', 'c']})
-    graph_equal(original, different_order)
+    assert (graph_equal(original, different_order))
+
+
+def test_equal_graphs_need_same_nodes() -> None:
+    original = MakeTree(['a'], ['a', 'b', 'c', 'd'], {'a': ['b', 'c']})
+    different_order = MakeTree(['a'], ['b', 'a', 'c'], {'a': ['b', 'c']})
+    assert (not (graph_equal(original, different_order)))
