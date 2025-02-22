@@ -4,7 +4,7 @@
 
 graph-copy
 
-- same nodes
+- same nodes --- right now test is relying on ordering -- it shouldn't
 - same edges
 - same roots
 - modify the original the copy shouldn't change
