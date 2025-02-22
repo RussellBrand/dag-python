@@ -8,9 +8,8 @@ type NodeName = str
 
 class Tree(NamedTuple):
     roots: list[NodeName]
-    # finals: list[NodeName]
     nodenames: set[NodeName]
-    connections: dict[NodeName, list[NodeName]]
+    connections: dict[NodeName, set[NodeName]]
 
 
 def nodes(tree: Tree) -> set[NodeName]:
@@ -22,10 +21,18 @@ def graph_copy(tree: Tree) -> Tree:
 
 
 def graph_equal(tree1: Tree, tree2: Tree) -> bool:
-    return nodes(tree1) == nodes(tree2)
+    if nodes(tree1) != nodes(tree2):
+        return False
+    if edges(tree1) != edges(tree2):
+        return False
+    return True
 
 
-def MakeTree(roots: list[NodeName], nodenames: list[NodeName], connections: dict[NodeName, list[NodeName]]) -> Tree:
+def edges(tree: Tree) -> set[tuple[NodeName, NodeName]]:
+    return set((node, child) for node in tree.connections for child in tree.connections[node])
+
+
+def MakeTree(roots: list[NodeName], nodenames: list[NodeName], connections: dict[NodeName, set[NodeName]]) -> Tree:
     return Tree(roots, set(nodenames), connections)
 
 

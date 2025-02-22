@@ -39,3 +39,9 @@ def test_equal_graphs_need_same_nodes() -> None:
     original = MakeTree(['a'], ['a', 'b', 'c', 'd'], {'a': ['b', 'c']})
     different_order = MakeTree(['a'], ['b', 'a', 'c'], {'a': ['b', 'c']})
     assert (not (graph_equal(original, different_order)))
+
+
+def test_equal_graphs_have_same_edges() -> None:
+    original = MakeTree(['a'], ['a', 'b', 'c'], {'a': ['b', 'c']})
+    different_order = MakeTree(['a'], ['a', 'b', 'c'], {'a': ['c', 'b']})
+    assert (graph_equal(original, different_order))
