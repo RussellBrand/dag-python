@@ -128,8 +128,6 @@ https://chatgpt.com/share/67b804b0-5bcc-800e-8d63-cdb2288d3876
 
 ### vscode
 
-
-
 Pair programming in **VS Code** can be done efficiently using **Live Share**, a built-in extension from Microsoft. Here’s how to set it up and use it:
 
 ---
@@ -166,7 +164,7 @@ Pair programming in **VS Code** can be done efficiently using **Live Share**, a 
 ✅ **Shared Terminals** – Run and view terminal commands together.  
 ✅ **Voice Chat** – Built-in audio calling without needing external apps.  
 ✅ **Independent Navigation** – Move across files separately without interrupting each other.  
-✅ **Follow Mode** – One user can follow the cursor of the other to stay in sync.  
+✅ **Follow Mode** – One user can follow the cursor of the other to stay in sync.
 
 ---
 
@@ -184,8 +182,8 @@ Pair programming in **VS Code** can be done efficiently using **Live Share**, a 
 
 ---
 
-
 ### git codspace
+
 Pair programming in **GitHub Codespaces** can be done using **Live Share** in VS Code (since Codespaces is essentially a VS Code environment). Here’s how you and your programming partner can collaborate effectively:
 
 ---
@@ -233,16 +231,16 @@ Since Codespaces runs **VS Code in the browser**, Live Share isn't preinstalled 
 ✅ **Shared Terminal Access** – You can run terminal commands and let your partner see them.  
 ✅ **Shared Servers** – If you run a local server (e.g., a web app), your partner can access it via a shared URL.  
 ✅ **Debugging Together** – Debug sessions are visible to both users.  
-✅ **Follow Mode** – One person can "follow" the other's cursor for guided programming.  
+✅ **Follow Mode** – One person can "follow" the other's cursor for guided programming.
 
 ---
 
-# ### **6. Ending the Session**
+#### **6. Ending the Session**
+
 - The host can click **"End Session"** to disconnect everyone.
 - The guest will automatically lose access.
 
 ---
-
 
 ## done
 
